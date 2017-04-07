@@ -21,7 +21,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'moll/vim-node'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'garbas/vim-snipmate'
@@ -29,6 +29,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-misc'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mxw/vim-jsx'
 call vundle#end()
 filetype plugin indent on
 
@@ -79,6 +80,7 @@ let g:syntastic_aggregate_errors=1
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "froala"']
 " let g:syntastic_check_on_open = 1
 let g:ctrlp_working_path_mode='ra'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 filetype on
 set scrolloff=8         " Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
