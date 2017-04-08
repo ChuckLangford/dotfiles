@@ -31,5 +31,3 @@ macOS Sierra currently causes issues with vim/tmux copy/paste. Do the following 
   brew install vim
   brew install reattach-to-user-namespace
 ```
-
-Make sure to run vim with the 'v' alias.
