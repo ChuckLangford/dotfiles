@@ -25,3 +25,11 @@ Create symbolic links:
 ```
 
 ESLint: use the instructions for Airbnb here https://www.npmjs.com/package/eslint-config-airbnb
+
+macOS Sierra currently causes issues with vim/tmux copy/paste. Do the following to adjust:
+```
+  brew install vim
+  brew install reattach-to-user-namespace
+```
+
+Make sure to run vim with the 'v' alias.
