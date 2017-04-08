@@ -7,6 +7,7 @@ Install iterm2. Make sure to set the iterm colors preference to at least slightl
 Install oh-my-zsh, homebrew, tmux (using homebrew).
 Install the Powerline fonts from here: https://github.com/powerline/fonts. Set iterm2 to use 12pt DejaVu Sans Mono for Powerline.
 Install nvm using: https://github.com/lukechilds/zsh-nvm
+Install eslint and any needed linting rules (airbnb, react-app, etc)
 
 Setup Vim
 ```
@@ -20,6 +21,7 @@ Create symbolic links:
   ln -s ~/.vim/.vimrc ~/.vimrc
   ln -s ~/.vim/.zshrc ~/.zshrc
   ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+  ln -s ~/.vim/.eslintrc ~/.eslintrc
 ```
 
 ESLint: use the instructions for Airbnb here https://www.npmjs.com/package/eslint-config-airbnb
