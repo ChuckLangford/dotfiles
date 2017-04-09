@@ -58,6 +58,7 @@ augroup END
 let mapleader=","
 nmap <silent> <leader>bd :bp\|bd #<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>ez :e ~/.vim/.zshrc<CR>
 nmap <leader>ne :NERDTreeToggle <cr>
 :inoremap jk <esc>
 nnoremap <left> :bprev<CR>
