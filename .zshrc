@@ -85,4 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 cd ~/Documents/src
 alias vim='reattach-to-user-namespace -l vim'
-alias tmux='tmux -f ~/Documents/src/tmux/d.conf attach'
+alias launchtmux='tmux -f ~/Documents/src/tmux/d.conf attach'
