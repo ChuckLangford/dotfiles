@@ -45,7 +45,7 @@ augroup reload_vimrc
 augroup END
 
 augroup config_group
-  autocmd FileType js setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
   autocmd FileType html setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType css setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType scss setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
@@ -123,6 +123,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
 " Folding
 " ====================
 set foldmethod=syntax
+
+" ====================
+" Quick Fix List
+" ====================
+nmap <silent> ]q :cn<CR>
+nmap <silent> [q :cp<CR>
 
 " ====================
 " VIM General
