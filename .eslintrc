@@ -1,3 +1,8 @@
 {
-  "extends": "airbnb"
+  "extends": "airbnb",
+  "rules": {
+    "consistent-return": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": "off"
+  }
 }

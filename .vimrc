@@ -34,6 +34,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 call vundle#end()
 
 " ====================
