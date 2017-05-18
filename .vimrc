@@ -136,4 +136,6 @@ nmap <silent> [q :cp<CR>
 " ====================
 set hidden "hide a buffer when you navigate away from it
 filetype plugin indent on "redo this when saving .vimrc for syntax
+set undofile "maintain undo history between sessions
+set undodir=~/.vim/undodir
 cd ~/Documents/src

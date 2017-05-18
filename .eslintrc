@@ -3,6 +3,7 @@
   "rules": {
     "consistent-return": "off",
     "class-methods-use-this": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "max-len": ["error", 200]
   }
 }
