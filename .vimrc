@@ -140,6 +140,7 @@ nmap <silent> [q :cp<CR>
 " ====================
 " VIM General
 " ====================
+set relativenumber
 set hidden "hide a buffer when you navigate away from it
 filetype plugin indent on "redo this when saving .vimrc for syntax
 set undofile "maintain undo history between sessions
