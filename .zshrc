@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/lalangford/.oh-my-zsh
@@ -83,6 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# This allows vim/ternjs to work with nvm
+rm /usr/local/bin/node
+ln -s $(which node) /usr/local/bin/node
 cd ~/Documents/src
 alias vim='reattach-to-user-namespace -l vim'
 alias launchtmux='tmux -f ~/Documents/src/tmux/d.conf attach'

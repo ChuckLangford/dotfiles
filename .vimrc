@@ -27,15 +27,21 @@ Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-misc'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mxw/vim-jsx'
 Plugin 'mileszs/ack.vim'
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+" Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
 
 " ====================
 " Autocommands
@@ -60,6 +66,7 @@ let mapleader=","
 nmap <silent> <leader>bd :bp\|bd #<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>ez :e ~/.vim/.zshrc<CR>
+nmap <silent> <leader>fj :%!python -m json.tool<CR>
 nmap <leader>ne :NERDTreeToggle <cr>
 :inoremap jk <esc>
 nnoremap <left> :bprev<CR>
