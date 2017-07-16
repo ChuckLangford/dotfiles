@@ -74,8 +74,7 @@ nnoremap <right> :bnext<CR>
 nnoremap <up> :tabnext<CR>
 nnoremap <down> :tabprev<CR>
 set number "show line numbers
-nnoremap <leader>rn :set relativenumber<CR>
-nnoremap <leader>an :set norelativenumber<CR>
+nnoremap <leader>rn :set relativenumber!<CR>
 
 " ====================
 " UI
