@@ -1,19 +1,31 @@
 dotfiles
 ========
+This is an extremely Mac specific setup. Additionally, the vim configuration requires vim 8+ or nvim. It has been tested and works with both.
 
 New Setup
 ========
-Install iterm2. Make sure to set the iterm colors preference to at least slightly above low contrast. The Solarized color scheme has issues when running in the terminal and vim at the same time.
-Install oh-my-zsh, homebrew, tmux (using homebrew).
-Install the Powerline fonts from here: https://github.com/powerline/fonts. Set iterm2 to use 12pt DejaVu Sans Mono for Powerline.
-Install nvm using: https://github.com/lukechilds/zsh-nvm
-Install eslint and any needed linting rules (airbnb, react-app, etc)
+Install homebrew.
+Install iterm2.
+Install iterm2 [colorschemes](https://github.com/mbadolato/iTerm2-Color-Schemes) and use the Solarized dark theme.
+Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+Install tmux (using homebrew).
+Install [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) fonts.
+Install [nvm](https://github.com/creationix/nvm).
+Install [eslint](https://www.npmjs.com/package/eslint-config-airbnb).
+Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher).
+Install [fzf](https://github.com/junegunn/fzf).
+Install [neovim](https://github.com/neovim/neovim).
+Install [vim-plug](https://github.com/junegunn/vim-plug).
 
-Setup Vim
+Install Vim
+The default installation of Vim doesn't have some necessary options built in. Override that by using Homebrew.
 ```
-  git clone [this repo] ~/.vim
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
+brew info vim // use this to see which options are available
+```
+
+Use this config:
+```
+git clone https://github.com/ChuckLangford/dotfiles.git ~/.vim
 ```
 
 Create symbolic links:
@@ -24,10 +36,11 @@ Create symbolic links:
   ln -s ~/.vim/.eslintrc ~/.eslintrc
 ```
 
-ESLint: use the instructions for Airbnb here https://www.npmjs.com/package/eslint-config-airbnb
+NOTE: Need to setup the nvim files
 
+
+# This section may be out of date. Needs testing.
 macOS Sierra currently causes issues with vim/tmux copy/paste. Do the following to adjust:
 ```
-  brew install vim
   brew install reattach-to-user-namespace
 ```

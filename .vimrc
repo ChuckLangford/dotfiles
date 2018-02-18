@@ -2,7 +2,6 @@
 " Packages
 " ====================
 call plug#begin('~/.vim/plugged')
-Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -57,10 +56,13 @@ cd ~/Documents/src
 " ====================
 " UI
 " ====================
-let python_highlight_all=1
-set termguicolors
-colorscheme NeoSolarized
+" The order of these lines is IMPORTANT
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
 set background=dark
+colorscheme NeoSolarized
+set termguicolors
+let python_highlight_all=1
 set list "show whitespace
 if exists('+colorcolumn')
   set colorcolumn=120
