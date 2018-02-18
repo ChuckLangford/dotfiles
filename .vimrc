@@ -13,8 +13,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'flazz/vim-colorschemes'
 Plug 'mileszs/ack.vim'
+Plug 'iCyMind/NeoSolarized'
 Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'mxw/vim-jsx'
@@ -56,7 +56,9 @@ cd ~/Documents/src
 " UI
 " ====================
 let python_highlight_all=1
-colorscheme solarized
+set termguicolors
+colorscheme NeoSolarized
+set background=dark
 set list "show whitespace
 if exists('+colorcolumn')
   set colorcolumn=120
