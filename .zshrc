@@ -90,3 +90,14 @@ ln -s $(which node) /usr/local/bin/node
 cd ~/Documents/src
 alias vim='reattach-to-user-namespace -l vim'
 alias launchtmux='tmux -f ~/Documents/src/tmux/d.conf attach'
+
+export PATH=/Library/Frameworks/Python.framework:$PATH:/Users/lalangford/bin
+
+# source '/Users/lalangford/lib/azure-cli/az.completion'
+export FZF_DEFAULT_COMMAND='ag -l'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

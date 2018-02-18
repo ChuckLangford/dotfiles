@@ -8,8 +8,9 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
-Plug 'kien/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-signify'
 Plug 'w0rp/ale'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
@@ -34,6 +35,7 @@ nmap <silent> <leader>ez :e ~/.vim/.zshrc<CR>
 nmap <silent> <leader>fj :%!python -m json.tool<CR>
 nnoremap <leader>rn :set relativenumber!<CR>
 nnoremap <leader>b :buffers<CR>
+nnoremap <leader>ff :Files<CR>
 
 " ====================
 " VIM General
