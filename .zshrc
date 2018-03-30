@@ -1,9 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
+export VISUAL=nvim
+export EDITOR=$VISUAL
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/lalangford/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -85,15 +87,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # This allows vim/ternjs to work with nvm
-rm /usr/local/bin/node
-ln -s $(which node) /usr/local/bin/node
+# rm /usr/local/bin/node
+# ln -s $(which node) /usr/local/bin/node
 cd ~/Documents/src
-alias vim='reattach-to-user-namespace -l vim'
-alias launchtmux='tmux -f ~/Documents/src/tmux/d.conf attach'
+# alias vim='reattach-to-user-namespace -l vim'
+# alias launchtmux='tmux -f ~/Documents/src/tmux/d.conf attach'
 
-export PATH=/Library/Frameworks/Python.framework:$PATH:/Users/lalangford/bin
+# export PATH=/Library/Frameworks/Python.framework:$PATH:~/bin
 
-# source '/Users/lalangford/lib/azure-cli/az.completion'
 export FZF_DEFAULT_COMMAND='ag -l'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export NVM_DIR="$HOME/.nvm"

@@ -33,7 +33,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>ez :e ~/.vim/.zshrc<CR>
 nmap <silent> <leader>fj :%!python -m json.tool<CR>
 nnoremap <leader>rn :set relativenumber!<CR>
-nnoremap <leader>b :buffers<CR>
+nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>ff :Files<CR>
 
 " ====================
