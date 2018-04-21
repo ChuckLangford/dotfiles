@@ -102,6 +102,7 @@ augroup config_group
   autocmd FileType html setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType css setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
   autocmd FileType scss setlocal noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd Filetype crontab setlocal nobackup nowritebackup
   au BufNewFile,BufRead *.py
       \ set tabstop=4 |
       \ set softtabstop=4 |
