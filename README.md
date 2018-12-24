@@ -1,9 +1,8 @@
-dotfiles
+# dotfiles
 ========
 This is an extremely Mac specific setup.
 
-New Setup
-========
+# New Setup
 * Install [homebrew](https://brew.sh/).
 * Install [iterm2](https://www.iterm2.com/).
 * Install iterm2 [colorschemes](https://github.com/mbadolato/iTerm2-Color-Schemes) and use the Solarized dark theme.
@@ -30,10 +29,16 @@ Create symbolic links:
   ln -s ~/.vim/.eslintrc ~/.eslintrc
 ```
 
-NOTE: Need to setup the nvim files
+# Neovim Config
+Neovim has a default config file location that will need to be redirected to this dotfile config. That file is located at `~/.config/nvim/init.vim` and it's contents should look like the following:
+`
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+`
 
-# This section may be out of date. Needs testing.
-macOS Sierra currently causes issues with vim/tmux copy/paste. Do the following to adjust:
+# This section may be out of date.
+macOS Sierra may have issues with vim/tmux copy/paste. Do the following to adjust:
 ```
   brew install reattach-to-user-namespace
 ```
