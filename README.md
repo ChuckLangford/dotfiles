@@ -1,5 +1,4 @@
 # dotfiles
-========
 This is an extremely Mac specific setup.
 
 # New Setup
@@ -31,11 +30,11 @@ Create symbolic links:
 
 # Neovim Config
 Neovim has a default config file location that will need to be redirected to this dotfile config. That file is located at `~/.config/nvim/init.vim` and it's contents should look like the following:
-`
+```
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-`
+```
 
 # This section may be out of date.
 macOS Sierra may have issues with vim/tmux copy/paste. Do the following to adjust:
