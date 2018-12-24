@@ -7,7 +7,7 @@ This is an extremely Mac specific setup.
 * Install iterm2 [colorschemes](https://github.com/mbadolato/iTerm2-Color-Schemes) and use the Solarized dark theme.
 * Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 * Install tmux (brew install tmux).
-* Install [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) fonts.
+* Install [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) fonts and select them in iterm2 default profile.
 * Install [nvm](https://github.com/creationix/nvm).
 * Install [eslint](https://www.npmjs.com/package/eslint-config-airbnb).
 * Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher).
@@ -36,6 +36,9 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 ```
+
+# Neovim Setup
+Launch nvim and run `:PlugInstall` to get neovim setup.
 
 # This section may be out of date.
 macOS Sierra may have issues with vim/tmux copy/paste. Do the following to adjust:
