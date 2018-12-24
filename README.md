@@ -14,6 +14,7 @@ This is an extremely Mac specific setup.
 * Install [fzf](https://github.com/junegunn/fzf).
 * Install [neovim](https://github.com/neovim/neovim).
 * Install [vim-plug](https://github.com/junegunn/vim-plug).
+* Install [tldr](https://github.com/tldr-pages/tldr/).
 
 Use this config:
 ```
