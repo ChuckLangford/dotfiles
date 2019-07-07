@@ -22,6 +22,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'fatih/vim-go'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " ====================
@@ -33,8 +35,12 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>ez :e ~/.vim/.zshrc<CR>
 nmap <silent> <leader>fj :%!python -m json.tool<CR>
 nnoremap <leader>rn :set relativenumber!<CR>
-nnoremap <leader>b :buffers<CR>
+nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ss :Snippets<CR>
+nnoremap <leader>ag :Ag<CR>
+nnoremap <leader>cc :Commits<CR>
+nnoremap <leader>id "=strftime("%FT%T%z")<CR>p
 
 " ====================
 " VIM General
@@ -48,7 +54,7 @@ set number "show line numbers
 set relativenumber "show relative numbers
 set hidden "hide a buffer when you navigate away from it
 filetype plugin indent on "redo this when saving .vimrc for syntax
-filetype plugin on "this is for the csv plugin
+filetype plugin on
 set undofile "maintain undo history between sessions
 set undodir=~/.vim/undodir
 cd ~/Documents/src
@@ -110,7 +116,7 @@ augroup config_group
       \ set expandtab |
       \ set autoindent |
       \ set fileformat=unix
-  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 augroup END
 
 " ====================

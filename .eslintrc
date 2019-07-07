@@ -1,9 +1,57 @@
 {
   "extends": "airbnb",
+  "globals": {
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "window": true,
+    "after": true,
+    "localStorage": true,
+    "sessionStorage": true
+  },
   "rules": {
-    "consistent-return": "off",
-    "class-methods-use-this": "off",
+    "valid-jsdoc": [
+      "error",
+      {
+        "preferType": {
+          "Boolean": "boolean",
+          "Number": "number",
+          "Object": "object",
+          "String": "string",
+          "Function": "function",
+          "Array": "array",
+          "Promise": "Promise"
+        },
+        "matchDescription": ".+",
+        "requireReturn": false,
+        "requireReturnDescription": false
+      }
+    ],
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": false,
+          "ClassDeclaration": false,
+          "ArrowFunctionExpression": false
+        }
+      }
+    ],
     "react/jsx-filename-extension": "off",
-    "max-len": ["error", 200]
+    "linebreak-style": "off",
+    "no-console": "off",
+    "consistent-return": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off",
+    "max-len": [
+      "error",
+      120,
+      {
+        "ignoreComments": true,
+        "ignoreTrailingComments": true
+      }
+    ]
   }
 }
