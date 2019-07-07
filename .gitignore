@@ -1,3 +1,7 @@
 *.swp
+*.swo
 bundle
 undodir
+.netrwhist
+autoload
+plugged
