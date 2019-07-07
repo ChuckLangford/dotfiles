@@ -116,20 +116,19 @@ augroup config_group
 augroup END
 
 " ====================
-" Syntastic
-" ====================
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_aggregate_errors=1
-
-" ====================
-" CTRL-P
-" ====================
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-" ====================
 " JSX
 " ====================
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" ====================
+" Go
+" ====================
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_fmt_command = "goimports"
