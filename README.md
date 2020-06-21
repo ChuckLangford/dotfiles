@@ -1,47 +1,10 @@
 # dotfiles
-This is an extremely Mac specific setup.
+This version of my dotfiles is working towards a more generic setup. See v1 tag for the mac version.
 
 # New Setup
-* Install [homebrew](https://brew.sh/).
-* Install [iterm2](https://www.iterm2.com/).
-* Install iterm2 [colorschemes](https://github.com/mbadolato/iTerm2-Color-Schemes) and use the Solarized dark theme.
-* Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
-* Install tmux (brew install tmux).
-* Install [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) fonts and select them in iterm2 default profile.
-* Install [nvm](https://github.com/creationix/nvm).
-* Install [eslint](https://www.npmjs.com/package/eslint-config-airbnb).
+Setup using the following command:
+```
+```
+
+You'll need to manually install Silver Searcher using whatever package management system is appropriate.
 * Install [The Silver Searcher](https://github.com/ggreer/the_silver_searcher).
-* Install [fzf](https://github.com/junegunn/fzf).
-* Install [neovim](https://github.com/neovim/neovim).
-* Install [vim-plug](https://github.com/junegunn/vim-plug).
-* Install [tldr](https://github.com/tldr-pages/tldr/).
-
-Use this config:
-```
-git clone https://github.com/ChuckLangford/dotfiles.git ~/.vim
-```
-
-Create symbolic links:
-```
-  ln -s ~/.vim/.vimrc ~/.vimrc
-  ln -s ~/.vim/.zshrc ~/.zshrc
-  ln -s ~/.vim/.tmux.conf ~/.tmux.conf
-  ln -s ~/.vim/.eslintrc ~/.eslintrc
-```
-
-# Neovim Config
-Neovim has a default config file location that will need to be redirected to this dotfile config. That file is located at `~/.config/nvim/init.vim` and it's contents should look like the following:
-```
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
-```
-
-# Neovim Setup
-Launch nvim and run `:PlugInstall` to get neovim setup.
-
-# This section may be out of date.
-macOS Sierra may have issues with vim/tmux copy/paste. Do the following to adjust:
-```
-  brew install reattach-to-user-namespace
-```
