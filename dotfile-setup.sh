@@ -46,6 +46,18 @@ else
 	echo "~/.vim/.gitignore file already exists"
 fi
 
+# Install tmux.conf
+if [ ! -f "$HOME/.vim/.tmux.conf" ]; then
+	if [ ! -L "$HOME/.tmux.conf" ]; then
+		curl -fsSLo ~/.vim/.tmux.conf https://raw.githubusercontent.com/ChuckLangford/dotfiles/main/.tmux.conf
+		echo "Installed ~/.vim/.tmux.conf"
+	else
+		echo "~/.tmux.conf symbolic link already existed but ~/.vim/.tmux.conf was not found"
+	fi
+else
+	echo "~/.vim/.tmux.conf file already exists"
+fi
+
 # Link stuff
 if [ ! -L "$HOME/.vimrc" ]; then
 	ln -s ~/.vim/.vimrc ~/.vimrc
@@ -74,4 +86,15 @@ if [ ! -L "$HOME/.gitignore" ]; then
 	echo "Created ~/.gitignore symbolic link"
 else
 	echo "~/.gitignore symbolic link already exists"
+fi
+
+if [ ! -L "$HOME/.tmux.conf" ]; then
+	if [ -f "$HOME/.tmux.conf" ]; then
+		echo "Backing up existing ~/.tmux.conf to ~/.tmux.conf.backup"
+		mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
+	fi
+	ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+	echo "Created ~/.tmux.conf symbolic link"
+else
+	echo "~/.tmux.conf symbolic link already exists"
 fi
