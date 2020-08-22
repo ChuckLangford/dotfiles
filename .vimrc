@@ -17,6 +17,8 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
 Plug 'fatih/vim-go'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
 call plug#end()
 
 let mapleader=" "
@@ -40,7 +42,7 @@ cd ~/Documents/src
 set hlsearch "Highlight all the found search patterns
 set foldmethod=syntax
 set background=dark
-colorscheme NeoSolarized
+colorscheme gruvbox
 set termguicolors
 set list "show whitespace
 highlight BadWhitespace ctermbg=Red guibg=Red
