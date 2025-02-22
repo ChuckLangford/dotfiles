@@ -118,6 +118,48 @@ vim.cmd([[cd ~/Documents/src]])
 -- Enable filetype detection, plugins, and indentation rules
 vim.cmd([[filetype plugin indent on]])
 
+-- Global variable to store the terminal buffer ID
+local term_buf = nil
+local term_win = nil
+
+-- Function to toggle the terminal
+function ToggleTerminal()
+  -- If the terminal window exists and is visible, hide it
+  if term_win and vim.api.nvim_win_is_valid(term_win) then
+    vim.api.nvim_win_hide(term_win)
+    term_win = nil
+    return
+  end
+
+  -- If the terminal buffer exists but isn’t visible, show it
+  if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+    vim.api.nvim_command("botright split")
+    term_win = vim.api.nvim_get_current_win()
+    vim.api.nvim_win_set_buf(term_win, term_buf)
+    vim.api.nvim_win_set_height(term_win, 10) -- Optional: Set a fixed height
+    vim.api.nvim_command("startinsert") -- Enter terminal mode
+    return
+  end
+
+  -- If no terminal exists, create a new one
+  vim.api.nvim_command("botright split")
+  term_buf = vim.api.nvim_create_buf(false, true) -- Create a scratch buffer
+  term_win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_set_buf(term_win, term_buf)
+  -- Get the current working directory from :pwd
+  local cwd = vim.fn.getcwd()
+  -- Open the terminal in the current working directory
+  vim.fn.termopen(vim.o.shell, { cwd = cwd })
+  vim.api.nvim_win_set_height(term_win, 10) -- Optional: Set a fixed height
+  vim.api.nvim_command("startinsert") -- Enter terminal mode
+end
+
+-- Map <leader>t to the ToggleTerminal function
+vim.api.nvim_set_keymap('n', '<leader>t', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true })
+
+-- Optional: Map a key in terminal mode to toggle it closed
+vim.api.nvim_set_keymap('t', '<leader>t', '<C-\\><C-n>:lua ToggleTerminal()<CR>', { noremap = true, silent = true })
+
 -----------------------
 -- Auto Commands --
 -----------------------
@@ -147,6 +189,7 @@ vim.keymap.set('n', '-', ':Ex<CR>')                    -- Open netrw file explor
 -- Map leader shortcuts for quick configuration and file access
 vim.keymap.set('n', '<LEADER>ev', ':e ~/.config/nvim/init.lua<CR>') -- Edit init.lua
 vim.keymap.set('n', '<LEADER>ez', ':e ~/.zshrc<CR>')                -- Edit .zshrc
+vim.keymap.set('n', '<CTRL>j', ':tabe<CR>')                -- Edit .zshrc
 
 -- Map leader shortcuts for Telescope (fuzzy finding)
 vim.keymap.set('n', '<LEADER>bb', ':Telescope buffers<CR>')         -- List open buffers
