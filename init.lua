@@ -122,7 +122,9 @@ vim.cmd([[filetype plugin indent on]])
 local term_buf = nil
 local term_win = nil
 
+-----------------------
 -- Function to toggle the terminal
+-----------------------
 function ToggleTerminal()
   -- If the terminal window exists and is visible, hide it
   if term_win and vim.api.nvim_win_is_valid(term_win) then
@@ -154,11 +156,13 @@ function ToggleTerminal()
   vim.api.nvim_command("startinsert") -- Enter terminal mode
 end
 
--- Map <leader>t to the ToggleTerminal function
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true })
-
--- Optional: Map a key in terminal mode to toggle it closed
-vim.api.nvim_set_keymap('t', '<leader>t', '<C-\\><C-n>:lua ToggleTerminal()<CR>', { noremap = true, silent = true })
+-----------------------
+-- Function to use Rg to search the current word --
+-----------------------
+function SearchCurrentWordWithRg()
+	local word = vim.fn.expand("<cword>")
+	vim.cmd("Rg " .. word)
+end
 
 -----------------------
 -- Auto Commands --
@@ -182,15 +186,12 @@ vim.api.nvim_exec([[
 ---------------------
 -- Key Mappings  --
 ---------------------
--- Map keys for quick escape from insert mode and file explorer
-vim.keymap.set('i', 'jk', '<ESC>')                    -- Exit insert mode by typing "jk"
-vim.keymap.set('n', '-', ':Ex<CR>')                    -- Open netrw file explorer
-
--- Map leader shortcuts for quick configuration and file access
-vim.keymap.set('n', '<LEADER>ev', ':e ~/.config/nvim/init.lua<CR>') -- Edit init.lua
-vim.keymap.set('n', '<LEADER>ez', ':e ~/.zshrc<CR>')                -- Edit .zshrc
-vim.keymap.set('n', '<CTRL>j', ':tabe<CR>')                -- Edit .zshrc
-
--- Map leader shortcuts for Telescope (fuzzy finding)
-vim.keymap.set('n', '<LEADER>bb', ':Telescope buffers<CR>')         -- List open buffers
-vim.keymap.set('n', '<LEADER>ff', ':Telescope find_files<CR>')        -- Find files
+vim.keymap.set('i', 'jk', '<ESC>') -- Exit insert mode by typing "jk"
+vim.keymap.set('n', '-', ':Ex<CR>') -- Open netrw file explorer
+vim.keymap.set('n', '<LEADER>evv', ':e ~/.config/nvim/init.lua<CR>') -- Edit init.lua
+vim.keymap.set('n', '<LEADER>ez', ':e ~/.zshrc<CR>') -- Edit .zshrc
+vim.keymap.set('n', '<LEADER>bb', ':Telescope buffers<CR>') -- List open buffers
+vim.keymap.set('n', '<LEADER>ff', ':Telescope find_files<CR>') -- Find files
+vim.keymap.set('n', '<LEADER>scw', ':lua SearchCurrentWordWithRg()<CR>', { noremap = true, silent = true }) -- Use Rg to search the word currently under the cursor
+vim.keymap.set('n', '<C-j>', ':lua ToggleTerminal()<CR>', { noremap = true, silent = true }) -- Map CTRL j to the ToggleTerminal function
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n>:lua ToggleTerminal()<CR>', { noremap = true, silent = true }) -- Map CTRL j in terminal mode to toggle it closed
