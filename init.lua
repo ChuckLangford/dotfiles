@@ -188,7 +188,7 @@ vim.api.nvim_exec([[
 ---------------------
 vim.keymap.set('i', 'jk', '<ESC>') -- Exit insert mode by typing "jk"
 vim.keymap.set('n', '-', ':Ex<CR>') -- Open netrw file explorer
-vim.keymap.set('n', '<LEADER>evv', ':e ~/.config/nvim/init.lua<CR>') -- Edit init.lua
+vim.keymap.set('n', '<LEADER>ev', ':e ~/.config/nvim/init.lua<CR>') -- Edit init.lua
 vim.keymap.set('n', '<LEADER>ez', ':e ~/.zshrc<CR>') -- Edit .zshrc
 vim.keymap.set('n', '<LEADER>bb', ':Telescope buffers<CR>') -- List open buffers
 vim.keymap.set('n', '<LEADER>ff', ':Telescope find_files<CR>') -- Find files
