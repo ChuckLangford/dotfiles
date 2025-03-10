@@ -54,7 +54,7 @@ require("lazy").setup({
     'tpope/vim-repeat',
 
     -- Lua helper library
-    'nvim-lua/plenary.nvim',
+    { "nvim-lua/plenary.nvim", branch = "master" },
 
     -- Go development plugin
     'fatih/vim-go',
@@ -84,6 +84,16 @@ require("lazy").setup({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    "github/copilot.vim",
+
+    {
+      "olimorris/codecompanion.nvim",
+      config = true,
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+      },
+    },
   },
   -- Set the default colorscheme during installation
   install = { colorscheme = { "habamax" } },
@@ -96,6 +106,71 @@ require('gitsigns').setup()
 require('leap').add_default_mappings()
 require('mason').setup()
 require('mason-lspconfig').setup()
+
+-- Setup Tree-sitter
+local ts_status, treesitter = pcall(require, "nvim-treesitter.configs")
+if ts_status then
+  treesitter.setup({
+    ensure_installed = { "lua", "markdown", "markdown_inline", "yaml" },
+    highlight = { enable = true },
+  })
+end
+
+--------------------------------------------------------------------------------
+-- CodeCompanion Plugin Configuration
+--
+-- CodeCompanion is an AI assistant plugin for Neovim that integrates with
+-- language models like Anthropic's Claude and OpenAI to help with code
+-- generation, refactoring, and answering programming questions.
+--
+-- This configuration:
+-- 1. Sets up API adapters for Anthropic and OpenAI
+-- 2. Configures chat and inline completion strategies
+-- 3. Customizes the display of the chat interface
+-- 4. Uses 1Password CLI to securely retrieve API keys
+--
+-- Note: This plugin requires nvim-lua/plenary.nvim and
+-- nvim-treesitter/nvim-treesitter as dependencies.
+--------------------------------------------------------------------------------
+require("codecompanion").setup({
+  adapters = {
+    anthropic = function()
+      return require("codecompanion.adapters").extend("anthropic", {
+        env = {
+          api_key = "cmd:op read op://Private/anthropicApi/credential --no-newline",
+        },
+      })
+    end,
+    openai = function()
+      return require("codecompanion.adapters").extend("openai", {
+	env = {
+	  api_key = "cmd:op read op://Private/openAi/credential --no-newline",
+	},
+      })
+    end,
+  },
+  strategies = {
+    chat = {
+      adapter = "anthropic",
+    },
+    inline = {
+      adapter = "copilot",
+    },
+  },
+  display = {
+    chat = {
+      -- Options to customize the UI of the chat buffer
+      window = {
+        layout = "vertical", -- float|vertical|horizontal|buffer
+        position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.plitright|vim.opt.splitbelow)
+        border = "single",
+      }
+    }
+  },
+  opts = {
+    log_level = "DEBUG", -- TRACE|DEBUG|ERROR|INFO
+  },
+})
 
 -----------------
 -- Vim Options --
